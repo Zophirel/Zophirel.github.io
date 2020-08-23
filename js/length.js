@@ -9,9 +9,9 @@ const getLength = (test) => {
             test.style.color = "black";
     }
     if(test.parentNode.children[0] == test)
-        underline.style.left = -17 + "em";
+        underline.style.left = -15 + "em";
     if(test.parentNode.children[1] == test)
-        underline.style.left = 0.7 + "em";
+        underline.style.left = 0.6 + "em";
     if(test.parentNode.children[2] == test)
-        underline.style.left = 17.7 + "em"; 
+        underline.style.left = 15.5 + "em"; 
 }

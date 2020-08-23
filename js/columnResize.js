@@ -4,8 +4,10 @@ secondItem = grid.children[1];
 thirdItem = grid.children[2];
 
 if(window.matchMedia("(min-width: 768px)").matches){
+    grid.style.transition = "grid-template-columns 0.5s ease";
     var itemTouch = (item) => {
-        grid.style.transition = 'all 0.5s ease';
+        
+
         if(item == firstItem)
             grid.style.gridTemplateColumns = '0.25fr 0.15fr 0.15fr';
         if(item == secondItem)
