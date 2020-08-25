@@ -1,5 +1,4 @@
-container = document.getElementsByClassName("container")[0];
-
+var container = document.getElementsByClassName("container")[0];
 first = document.getElementById("firstBlock");
 second = document.getElementById("secondBlock");
 third = document.getElementById("thirdBlock");
@@ -13,7 +12,7 @@ btn = [btnCss[0],
        btnCss[1],
        btnCss[2]];
 
-console.log(btn[0]);
+console.log(window.matchMedia("(min-width: 768px)").matches);
 
 if(window.matchMedia("(min-width: 768px)").matches){
     var itemTouch = (item) => {
@@ -85,9 +84,63 @@ if(window.matchMedia("(min-width: 768px)").matches){
         }
     }
 }else{
-    const items = [first, second, third];
+    const items = [first, second, third]; 
     for (let i = 0; i < items.length; i++){
         items[i].removeAttribute("onmouseenter");
         items[i].removeAttribute("onmouseleave");
+        items[i].setAttribute("onclick", "tap(this)");
     }
+    desc = document.getElementById("descBlock");
+    var container = document.getElementsByClassName("container")[0];
+    var p = desc.children[1];
+    p.innerHTML = p.innerHTML.replace('<br>', '');
+
+    btn[0].style.opacity = "1";
+    subcontainer = document.createElement("div");
+    subcontainer.classList.add("subcontainer");
+    console.log(subcontainer);
+    document.body.appendChild(subcontainer);
+    subcontainer.appendChild(second);
+    subcontainer.appendChild(third);
+
+    subcontainer.style.height = "max-content";
+    container.style.height = "max-content";
+    var tap = (item) => {
+        nf = container.children[0];
+        ns = subcontainer.children[0];
+        nt = subcontainer.children[1];
+
+        console.log(nf, ns, nt);
+        if(item == first){
+            console.log(subcontainer);
+            console.log(container);
+        }
+        if(item == second){
+         
+                first.style.width = "35vw";
+                item.style.top = "0.7vh";
+                third.style.right = "47vw";
+                first.style.top = "38.3vh";
+                item.style.width = "70vw";
+            
+            item.removeAttribute('id');
+            item.setAttribute('id', 'firstBlock');
+            first.removeAttribute('id')
+            first.setAttribute('id', 'thirdBlock');
+            third.removeAttribute('id');
+            third.setAttribute('id', 'secondBlock');
+            container.replaceChild(ns, nf);
+            subcontainer.appendChild(nf);
+            console.log(nf, ns, nt);
+            first = ns;
+            second = nt;
+            third = nf;
+            first.removeAttribute('style');
+            second.removeAttribute('style');
+            third.removeAttribute('style');
+        }
+        if(item == third){
+
+        }
+    } 
 }
