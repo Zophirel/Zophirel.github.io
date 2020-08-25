@@ -84,7 +84,54 @@ if(window.matchMedia("(min-width: 768px)").matches){
         }
     }
 }else{
-    const items = [first, second, third]; 
+
+    var restore = () =>{
+        btnCss[0].style.transition = "bottom 0.6s ease-out, opacity 0.4s ease-out";
+        btnCss[0].style.bottom = "20px";
+        btnCss[0].style.opacity = "1";
+    }
+    var replaceId = (item, i) =>  {
+        if(i == 0){
+        console.log("ciao");
+        item.removeAttribute('id');
+        item.setAttribute('id', 'firstBlock');
+        first.removeAttribute('id')
+        first.setAttribute('id', 'thirdBlock');
+        third.removeAttribute('id');
+        third.setAttribute('id', 'secondBlock');
+        container.replaceChild(ns, nf);
+        subcontainer.appendChild(nf);
+        console.log(nf, ns, nt);
+        first = ns;
+        second = nt;
+        third = nf;
+        first.removeAttribute('style');
+        second.removeAttribute('style');
+        third.removeAttribute('style');
+        item.setAttribute('onclick', "tap(this)");
+        }
+        if(i == 1){
+            console.log("ciao2");
+            item.removeAttribute('id');
+            item.setAttribute('id', 'firstBlock');
+            first.removeAttribute('id')
+            first.setAttribute('id', 'thirdBlock');
+            third.removeAttribute('id');
+            third.setAttribute('id', 'secondBlock');
+            container.replaceChild(nt, nf);
+            subcontainer.appendChild(nf);
+            console.log(nf, ns, nt);
+            first = ns;
+            second = nt;
+            third = nf;
+            first.removeAttribute('style');
+            second.removeAttribute('style');
+            third.removeAttribute('style');
+            item.setAttribute('onclick', "tap(this)");
+        }
+    }
+
+    var items = [first, second, third]; 
     for (let i = 0; i < items.length; i++){
         items[i].removeAttribute("onmouseenter");
         items[i].removeAttribute("onmouseleave");
@@ -116,31 +163,63 @@ if(window.matchMedia("(min-width: 768px)").matches){
             console.log(container);
         }
         if(item == second){
-         
-                first.style.width = "35vw";
+                item.removeAttribute('onclick');
+                btnCss[0].style.transition = "bottom 0.5s ease-out, opacity 0.3s ease-out";
+                btnCss[0].style.bottom = "0";
+                btnCss[0].style.opacity = "0";
+                item.style.pointerEvents = "none";
+                first.style.pointerEvents = "none";
+                third.style.pointerEvents = "none";
+                first.style.transition = "width 1s ease 0s, top 1s ease 2.4s";
+                first.style.width = "32vw";
+                second.style.transition = "top 1s ease 1s, width 1s ease 3s";
                 item.style.top = "0.7vh";
+                third.style.transition = "right 1s 1.7s";
                 third.style.right = "47vw";
                 first.style.top = "38.3vh";
                 item.style.width = "70vw";
-            
-            item.removeAttribute('id');
-            item.setAttribute('id', 'firstBlock');
-            first.removeAttribute('id')
-            first.setAttribute('id', 'thirdBlock');
-            third.removeAttribute('id');
-            third.setAttribute('id', 'secondBlock');
-            container.replaceChild(ns, nf);
-            subcontainer.appendChild(nf);
-            console.log(nf, ns, nt);
-            first = ns;
-            second = nt;
-            third = nf;
-            first.removeAttribute('style');
-            second.removeAttribute('style');
-            third.removeAttribute('style');
+                item.style.pointerEvents = "auto";
+                first.style.pointerEvents = "auto";
+                third.style.pointerEvents = "auto";
+                btnCss[1].style.transition = "bottom 0.5s ease-in 3.5s, opacity 0.3s ease-in 3.5s";
+                btnCss[1].style.bottom = "20px";
+                btnCss[1].style.opacity = "1";
+                window.setTimeout(function () {
+                    replaceId(item);
+                }, 6000);
         }
         if(item == third){
+            item.removeAttribute('onclick');
+            btnCss[0].style.transition = "bottom 0.5s ease-out, opacity 0.3s ease-out";
+            btnCss[0].style.bottom = "0";
+            btnCss[0].style.opacity = "0";
+            item.style.pointerEvents = "none";
+            first.style.pointerEvents = "none";
+            second.style.pointerEvents = "none";
+            first.style.transition = "width 1s ease , top 1s ease 2.4s, left 1s ease-in 6.5s";
+            first.style.width = "32vw";
+            second.style.transition = "top 1s ease 1s, left 1s ease 3s";
+            second.style.top = "0.7vh";
+
+            item.style.transition = "right 1s 1.7s, top 1s 4s";
+            item.style.right = "47vw";
+
+            first.style.top = "38.3vh";
+            second.style.left = "47vw";
+            item.style.top = "1vh";
+
+
+            item.style.pointerEvents = "auto";
+            first.style.pointerEvents = "auto";
+            second.style.pointerEvents = "auto";
+            btnCss[1].style.transition = "bottom 0.5s ease-in 3.5s, opacity 0.3s ease-in 3.5s";
+            btnCss[1].style.bottom = "20px";
+            btnCss[1].style.opacity = "1";
+            window.setTimeout(function () {
+                replaceId(item);
+            }, 7000);
 
         }
+
     } 
 }
