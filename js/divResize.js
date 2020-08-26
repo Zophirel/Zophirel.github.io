@@ -148,7 +148,7 @@ if(window.matchMedia("(min-width: 768px)").matches){
     desc = document.getElementById("descBlock");
     var container = document.getElementsByClassName("container")[0];
     var p = desc.children[1];
-    p.innerHTML = p.innerHTML.replace('<br>', '');
+    p.innerHTML = "<p> Access best in class, enterprise-grade capabilities that allow you and your customers to get the most out of your supply chain.</p>"; 
 
     btn[0].style.opacity = "1";
     subcontainer = document.createElement("div");
@@ -209,8 +209,8 @@ if(window.matchMedia("(min-width: 768px)").matches){
             second.style.pointerEvents = "none";
 
             first.style.transition = "width 1s ease , top 1s ease 3.8s, left 1s ease-in 4.5s";
-            first.style.left = "0";
-            first.style.width = "32vw";
+            first.style.left = "1vw";
+            first.style.width = "32.5vw";
             
             item.style.transition = "right 1s 1.7s, top 1s 1.5s, width 1s 5s";
             item.style.top = "1vh";
@@ -220,7 +220,7 @@ if(window.matchMedia("(min-width: 768px)").matches){
             first.style.top = "38.3vh";
             
             item.style.top = "1vh";
-            item.style.width = "70vw";
+            item.style.width = "67.8vw";
 
             item.style.pointerEvents = "auto";
             first.style.pointerEvents = "auto";
