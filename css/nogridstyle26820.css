@@ -148,11 +148,9 @@ li:nth-of-type(3):hover ~ #underline {
   @media screen and (max-width: 414px){
     #firstBlock{
         position: absolute;
-        top: 1vh;
         height: 35vh;
         width: 70vw;
         flex-basis: 70vw;
-       right: 0;
     }
     
     #secondBlock, #thirdBlock{
@@ -172,6 +170,7 @@ li:nth-of-type(3):hover ~ #underline {
     #thirdBlock{
         right: 5.5vh;
         top: 38.3vh
+
     }
 
     
@@ -238,10 +237,7 @@ li:nth-of-type(3):hover ~ #underline {
         display: block;
         margin: auto;
     }
-    #secondBlock > .btn{
-        bottom: 0;
 
-    }
     .btext {
         position: absolute;
         bottom: 20px;
