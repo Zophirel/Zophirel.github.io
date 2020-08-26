@@ -179,6 +179,7 @@ if(window.matchMedia("(min-width: 768px)").matches){
                 first.style.pointerEvents = "none";
                 third.style.pointerEvents = "none";
                 first.style.transition = "width 1s ease 0s, top 1s ease 2.4s";
+                first.style.right = "0";
                 first.style.width = "32vw";
                 second.style.transition = "top 1s ease 1s, width 1s ease 3s";
                 item.style.top = "0.7vh";
@@ -214,8 +215,8 @@ if(window.matchMedia("(min-width: 768px)").matches){
             item.style.transition = "right 1s 1.7s, top 1s 1.5s, width 1s 5s";
             item.style.top = "1vh";
             
-            second.style.transition = "right 1s ease 3s";
-            second.style.right = "12vw";
+            second.style.transition = "left 1s ease 3s";
+            second.style.left = "48vw";
             first.style.top = "38.3vh";
             
             item.style.top = "1vh";
