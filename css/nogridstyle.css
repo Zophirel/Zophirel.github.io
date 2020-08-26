@@ -3,6 +3,8 @@
 
 body{
     background-color: white;
+    height: 100%;
+    width: 100%;
 }
 
 #underline {
@@ -283,6 +285,12 @@ li:nth-of-type(3):hover ~ #underline {
         left: -3vw;
         top: 48vh;
         padding-bottom: 20px;
+    }
+
+    #touchsurface{
+        height: 300px;
+        width: 300px;
+        background-color: aqua;
     }
   }
 
