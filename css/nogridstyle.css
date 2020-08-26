@@ -152,7 +152,7 @@ li:nth-of-type(3):hover ~ #underline {
         height: 35vh;
         width: 70vw;
         flex-basis: 70vw;
-       right: 0;
+        justify-self: end;
     }
     
     #secondBlock, #thirdBlock{
@@ -164,14 +164,14 @@ li:nth-of-type(3):hover ~ #underline {
     }
     
     #secondBlock{
-        left: 45;
         /*top: 0.7vh;*/
-        top: 38.3vh
+        top: 38.3vh;
+        right: 48vw;
     }
 
     #thirdBlock{
         right: 5.5vh;
-        top: 38.3vh
+        top: 38.3vh;
     }
 
     
