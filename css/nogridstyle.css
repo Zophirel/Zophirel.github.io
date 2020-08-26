@@ -292,6 +292,7 @@ li:nth-of-type(3):hover ~ #underline {
     }
 
     #touchsurface{
+        display: none;
         height: 100vh;
         width: 98vw;
     }
